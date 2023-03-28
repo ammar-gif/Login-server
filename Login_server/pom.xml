@@ -15,13 +15,10 @@
     <description>Users-server</description>
     <properties>
         <java.version>19</java.version>
-
-
         <properties>
             <sonar.organization>semester-6-indvidueel</sonar.organization>
             <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         </properties>
-
     </properties>
 
     <profiles>
@@ -31,6 +28,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
+
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
                 <sonar.host.url>
                     http://127.0.0.1:9000/
