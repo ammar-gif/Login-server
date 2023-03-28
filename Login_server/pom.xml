@@ -15,10 +15,8 @@
     <description>Users-server</description>
     <properties>
         <java.version>19</java.version>
-        <properties>
             <sonar.organization>semester-6-indvidueel</sonar.organization>
             <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        </properties>
     </properties>
 
     <profiles>
