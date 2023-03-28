@@ -1,0 +1,85 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="./static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<div class="container">
+  <form action="/predict" method="post">
+    <p>Career journey discovery tool </p>
+
+
+          <div class="henhous-color">
+            <label><b class="henhous-color" style="font-size: large" >Current role</b></label>
+            <br>
+          <select name="Current_role" id="Current_role" class="select2 form-control " placeholder="first2_name">
+          <optgroup label="Current role">
+           <option value="24">adviseur</option>
+            <option value="381">Sales manager</option>
+          <option value="364">Project manager</option>
+          <option value="339">Marketing head</option>
+          <option value="237">Docent</option>
+         </optgroup>
+        </select>
+        </div>
+
+
+
+
+         <div>
+            <label for="Duration"><b  style="font-size: medium">How long have you been working in this role (Years):</b></label>
+            <br>
+          <input name="Duration"  id="Duration" type="text" class="validate">
+        </div>
+
+
+
+  <div>
+     <label ><b  style="font-size: medium"> Enter your skills:</b></label>
+
+
+          <div class="henhous-color">
+            <label><b class="henhous-color" style="font-size: large" >First skill</b></label>
+            <br>
+          <select name="skill1" id="skill1" class="select2 form-control " placeholder="first2_name">
+          <optgroup label="First skill">
+           <option value="2268">Coaching</option>
+            <option value="2226">Account management</option>
+         </optgroup>
+        </select>
+        </div>
+
+       <div class="henhous-color">
+            <label><b class="henhous-color" style="font-size: large" >Second skill</b></label>
+            <br>
+          <select name="skill2" id="skill2" class="select2 form-control " placeholder="first2_name">
+          <optgroup label="Second skill">
+           <option value="2268">Coaching</option>
+            <option value="2226">Account management</option>
+         </optgroup>
+        </select>
+        </div>
+
+
+       <div class="henhous-color">
+            <label><b class="henhous-color" style="font-size: large" >Third skill</b></label>
+            <br>
+          <select name="skill3" id="skill3" class="select2 form-control " placeholder="first2_name">
+          <optgroup label="Third skill">
+           <option value="2268">Coaching</option>
+            <option value="2226">Account management</option>
+         </optgroup>
+        </select>
+        </div>
+
+
+  </div>
+       <input id="but_search" class="button" type="submit" value="Predict"><br>
+
+       <div>
+         <label><b style="font-size: small" >The prediction result:</b></label>
+           {{ x }}
+    </div>
+
+  </form>
+
+
+
+    </div>

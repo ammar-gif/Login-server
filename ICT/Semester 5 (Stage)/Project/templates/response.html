@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+              <div class="column">
+
+                           <form action = "http://localhost:5000/downloadImage1"  method = "POST" >
+                  <img  id ='img' src="data:image/jpeg;base64,{{ img_data }}"  style="width:100%">
+                  <button name='img' value="{{ img_data }}" class="btn"><i></i> Download image</button>
+                      </form>
+                    <input type="checkbox" name="c1" onclick="showMe('div3')">Do you want  edit this design pattern?
+                  <div id="div3" style="display:none;">
+                   <form action = "http://localhost:5000/regenerate" method = "POST">
+                      <div>
+                          <input type="range" id="imhotep_spike_no" name="imhotep_spike_no" min="0" max="40" value="{{ imhotep_spike_no }}">
+                          <label style="font-size: small" for="imhotep_spike_no">Number of Spikes: </label>
+                              <p> <output id="value_imhotep_spike_no"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_spike_no")
+                              const input = document.querySelector("#imhotep_spike_no")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+                        </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_row_no" name="imhotep_row_no" min="0" max="40" value="{{ imhotep_row_no }}">
+                           <label style="font-size: small" for="imhotep_row_no">Number of rows: </label>
+                              <p> <output id="value_imhotep_row_no"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_row_no")
+                              const input = document.querySelector("#imhotep_row_no")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div style="display:none;">
+                                 <input type="range" id="imhotep_row_margin_percent" name="imhotep_row_margin_percent" min="0" max="500" value="{{ imhotep_row_margin_percent }}">
+                           <label style="font-size: small" for="imhotep_row_margin_percent">Rows margin percent: </label>
+                              <p> <output id="valueRow_margin_percent"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#valueRow_margin_percent")
+                              const input = document.querySelector("#imhotep_row_margin_percent")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_middle_buffer_percent" name="imhotep_middle_buffer_percent" min="0" max="120" value="{{ imhotep_middle_buffer_percent }}">
+                           <label style="font-size: small" for="imhotep_middle_buffer_percent">The intermediate space between the upper and lower rows</label>
+                              <p> <output id="value_imhotep_middle_buffer_percent"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_middle_buffer_percent")
+                              const input = document.querySelector("#imhotep_middle_buffer_percent")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div style="display:none;"    >
+                                 <input type="range" id="imhotep_row_buffer" name="imhotep_row_buffer" min="0" max="40" value="{{ imhotep_row_buffer }}">
+                           <label style="font-size: small" for="imhotep_row_buffer">imhotep_row_buffer: </label>
+                              <p> <output  id="value_imhotep_row_buffer"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_row_buffer")
+                              const input = document.querySelector("#imhotep_row_buffer")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_downward_length" name="imhotep_downward_length" min="0" max="15" value="{{ imhotep_downward_length }}">
+                           <label style="font-size: small" for="imhotep_downward_length">imhotep_downward_length: </label>
+                              <p> <output  id="value_imhotep_downward_length"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_length")
+                              const input = document.querySelector("#imhotep_downward_length")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_downward_no" name="imhotep_downward_no" min="0" max="50" value="{{ imhotep_downward_no }}">
+                           <label style="font-size: small" for="imhotep_downward_no">imhotep_downward_no: </label>
+                              <p> <output id="value_imhotep_downward_no"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_no")
+                              const input = document.querySelector("#imhotep_downward_no")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_downward_cols" name="imhotep_downward_cols" min="0" max="50" value="{{ imhotep_downward_cols }}">
+                           <label style="font-size: small" for="imhotep_downward_cols">imhotep_downward_cols: </label>
+                              <p> <output id="value_imhotep_downward_cols"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_cols")
+                              const input = document.querySelector("#imhotep_downward_cols")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+
+
+                           <div name="color1" style="display:none;">
+                                 <label for="row_color">Name:</label>
+    <input type="text"           id="row_color" name="row_color" value="{{ imhotep_row_color }}">
+                          </div>
+
+                           <div style="display:none;" >
+                                 <input type="range" id="imhotep_row_pensize" name="imhotep_row_pensize" min="0" max="15" value="{{ imhotep_row_pensize }}">
+                           <label style="font-size: small" for="imhotep_row_pensize">Row pensize:  </label>
+                              <p> <output id="value_imhotep_row_pensize"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_row_pensize")
+                              const input = document.querySelector("#imhotep_row_pensize")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                           <div style="display:none;">
+                                 <input type="range" id="imhotep_downward_pensize" name="imhotep_downward_pensize" min="0" max="15" value="{{ imhotep_downward_pensize }}">
+                           <label style="font-size: small" for="imhotep_downward_pensize">imhotep_downward_pensize: </label>
+                              <p> <output  id="value_imhotep_downward_pensize"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_cols")
+                              const input = document.querySelector("#imhotep_downward_cols")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+                          <div name="color2" style="display:none;">
+                               <label for="downward_color">Name:</label>
+    <input type="text"           id="downward_color" name="downward_color" value="{{ imhotep_downward_color }}">
+                          </div>
+
+                          <div style="display:none;">
+                                 <input type="range" id="imhotep_bounding_pensize" name="imhotep_bounding_pensize" min="0" max="15" value="{{ imhotep_bounding_pensize }}">
+                           <label style="font-size: small" for="imhotep_bounding_pensize">imhotep_bounding_pensize: </label>
+                              <p> <output  id="value_imhotep_bounding_pensize"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_bounding_pensize")
+                              const input = document.querySelector("#imhotep_bounding_pensize")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div name="color3" style="display:none;">
+                               <label for="bounding_color ">Name:</label>
+        <input type="text"           id="bounding_color " name="bounding_color " value="{{ imhotep_bounding_color }}">
+                          </div>
+
+                   <button id = "but_search" type="submit" class="btn">Regenerate</button>
+                  </form>
+                  </div>
+
+
+                     <script>
+function showMe (box) {
+
+    var chboxs = document.getElementsByName("c1");
+    var vis = "none";
+    for(var i=0;i<chboxs.length;i++) {
+        if(chboxs[i].checked){
+         vis = "block";
+            break;
+        }
+    }
+    document.getElementById(box).style.display = vis;
+
+
+}
+</script>
+                  </div>
+
+
+
+
+
+
+              <div class="column">
+                     <form action = "http://localhost:5000/downloadImage1"  method = "POST" >
+                  <img id="img2" src="data:image/jpeg;base64,{{ img_data2 }}" style="width:100%">
+                   <button name="img2" value="{{ img_data2 }}"  class="btn"><i></i> Download</button>
+                  </form>
+                  <input type="checkbox" name="c2" onclick="showMe2('div4')">Do you want  edit this design pattern?
+                     <div id="div4" style="display:none;">
+                   <form action = "http://localhost:5000/regenerate" method = "POST">
+                      <div>
+                          <input type="range" id="imhotep_spike_no_2" name="imhotep_spike_no_2" min="0" max="40" value="{{ imhotep_spike_no_2 }}">
+                          <label style="font-size: small" for="imhotep_spike_no_2">Number of Spikes: </label>
+                              <p> <output id="value_imhotep_spike_no_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_spike_no_2")
+                              const input = document.querySelector("#imhotep_spike_no_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+                        </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_row_no_2" name="imhotep_row_no_2" min="0" max="40" value="{{ imhotep_row_no_2 }}">
+                           <label style="font-size: small" for="imhotep_row_no_2">Number of rows: </label>
+                              <p> <output id="value_imhotep_row_no_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_row_no_2")
+                              const input = document.querySelector("#imhotep_row_no_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div style="display:none;">
+                                 <input type="range" id="imhotep_row_margin_percent_2" name="imhotep_row_margin_percent_2" min="0" max="500" value="{{ imhotep_row_margin_percent_2 }}">
+                           <label style="font-size: small" for="imhotep_row_margin_percent_2">Rows margin percent: </label>
+                              <p> <output id="valueRow_margin_percent_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#valueRow_margin_percent_2")
+                              const input = document.querySelector("#imhotep_row_margin_percent_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_middle_buffer_percent_2" name="imhotep_middle_buffer_percent_2" min="0" max="120" value="{{ imhotep_middle_buffer_percent_2 }}">
+                           <label style="font-size: small" for="imhotep_middle_buffer_percent_2">The intermediate space between the upper and lower rows</label>
+                              <p> <output id="value_imhotep_middle_buffer_percent_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_middle_buffer_percent_2")
+                              const input = document.querySelector("#imhotep_middle_buffer_percent_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div style="display:none;"    >
+                                 <input type="range" id="imhotep_row_buffer_2" name="imhotep_row_buffer_2" min="0" max="40" value="{{ imhotep_row_buffer_2 }}">
+                           <label style="font-size: small" for="imhotep_row_buffer_2">imhotep_row_buffer: </label>
+                              <p> <output  id="value_imhotep_row_buffer_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_row_buffer_2")
+                              const input = document.querySelector("#imhotep_row_buffer_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_downward_length_2" name="imhotep_downward_length_2" min="0" max="15" value="{{ imhotep_downward_length_2 }}">
+                           <label style="font-size: small" for="imhotep_downward_length_2">imhotep_downward_length: </label>
+                              <p> <output  id="value_imhotep_downward_length_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_length_2")
+                              const input = document.querySelector("#imhotep_downward_length_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_downward_no_2" name="imhotep_downward_no_2" min="0" max="50" value="{{ imhotep_downward_no_2 }}">
+                           <label style="font-size: small" for="imhotep_downward_no_2">imhotep_downward_no: </label>
+                              <p> <output id="value_imhotep_downward_no_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_no_2")
+                              const input = document.querySelector("#imhotep_downward_no_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_downward_cols_2" name="imhotep_downward_cols_2" min="0" max="50" value="{{ imhotep_downward_cols_2 }}">
+                              _
+                           <label style="font-size: small" for="imhotep_downward_cols_2">imhotep_downward_cols: </label>
+                              <p> <output id="value_imhotep_downward_cols_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_cols_2")
+                              const input = document.querySelector("#imhotep_downward_cols_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+
+
+                           <div name="color1" style="display:none;">
+                                 <label for="row_color">Name:</label>
+    <input type="text"           id="row_color_2" name="row_color_2" value="{{ imhotep_row_color_2 }}">
+                          </div>
+
+                           <div style="display:none;" >
+                                 <input type="range" id="imhotep_row_pensize_2" name="imhotep_row_pensize_2" min="0" max="15" value="{{ imhotep_row_pensize_2 }}">
+                           <label style="font-size: small" for="imhotep_row_pensize_2">Row pensize:  </label>
+                              <p> <output id="value_imhotep_row_pensize_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_row_pensize_2")
+                              const input = document.querySelector("#imhotep_row_pensize_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                           <div style="display:none;">
+                                 <input type="range" id="imhotep_downward_pensize_2" name="imhotep_downward_pensize_2" min="0" max="15" value="{{ imhotep_downward_pensize_2 }}">
+                           <label style="font-size: small" for="imhotep_downward_pensize_2">imhotep_downward_pensize: </label>
+                              <p> <output  id="value_imhotep_downward_pensize_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_cols_2")
+                              const input = document.querySelector("#imhotep_downward_cols_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+                          <div name="color2" style="display:none;">
+                               <label for="downward_color">Name:</label>
+    <input type="text"           id="downward_color_2" name="downward_color_2" value="{{ imhotep_downward_color_2 }}">
+                          </div>
+
+                          <div style="display:none;">
+                                 <input type="range" id="imhotep_bounding_pensize_2" name="imhotep_bounding_pensize_2" min="0" max="15" value="{{ imhotep_bounding_pensize_2 }}">
+                           <label style="font-size: small" for="imhotep_bounding_pensize_2">imhotep_bounding_pensize: </label>
+                              <p> <output  id="value_imhotep_bounding_pensize_2"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_bounding_pensize_2")
+                              const input = document.querySelector("#imhotep_bounding_pensize_2")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div name="color3" style="display:none;">
+                               <label for="bounding_color_2 ">Name:</label>
+        <input type="text"           id="bounding_color_2 " name="bounding_color_2 " value="{{ imhotep_bounding_color_2 }}">
+                          </div>
+
+                   <button id = "but_search_2" type="submit" class="btn">Regenerate</button>
+                  </form>
+                  </div>
+
+
+                     <script>
+function showMe2 (box) {
+
+    var chboxs = document.getElementsByName("c2");
+    var vis = "none";
+    for(var i=0;i<chboxs.length;i++) {
+        if(chboxs[i].checked){
+         vis = "block";
+            break;
+        }
+    }
+    document.getElementById(box).style.display = vis;
+
+
+}
+</script>
+
+
+              </div>
+         <div class="column">
+              <form action = "http://localhost:5000/downloadImage1"  method = "POST" >
+                  <img id="img3" src="data:image/jpeg;base64,{{ img_data3 }}" style="width:100%">
+                  <button name="img3" value="{{ img_data3 }}"  class="btn"><i></i> Download</button>
+                    </form>
+
+              <input type="checkbox" name="c3" onclick="showMe3('div5')">Do you want  edit this design pattern?
+                     <div id="div5" style="display:none;">
+                   <form action = "http://localhost:5000/regenerate" method = "POST">
+                      <div>
+                          <input type="range" id="imhotep_spike_no_3" name="imhotep_spike_no_3" min="0" max="40" value="{{ imhotep_spike_no_3 }}">
+                          <label style="font-size: small" for="imhotep_spike_no_3">Number of Spikes: </label>
+                              <p> <output id="value_imhotep_spike_no_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_spike_no_3")
+                              const input = document.querySelector("#imhotep_spike_no_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+                        </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_row_no_3" name="imhotep_row_no_3" min="0" max="40" value="{{ imhotep_row_no_3 }}">
+                           <label style="font-size: small" for="imhotep_row_no_3">Number of rows: </label>
+                              <p> <output id="value_imhotep_row_no_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_row_no_3")
+                              const input = document.querySelector("#imhotep_row_no_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div style="display:none;">
+                                 <input type="range" id="imhotep_row_margin_percent_3" name="imhotep_row_margin_percent_3" min="0" max="500" value="{{ imhotep_row_margin_percent_3 }}">
+                           <label style="font-size: small" for="imhotep_row_margin_percent_3">Rows margin percent: </label>
+                              <p> <output id="valueRow_margin_percent_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#valueRow_margin_percent_3")
+                              const input = document.querySelector("#imhotep_row_margin_percent_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_middle_buffer_percent_3" name="imhotep_middle_buffer_percent_3" min="0" max="120" value="{{ imhotep_middle_buffer_percent_3 }}">
+                           <label style="font-size: small" for="imhotep_middle_buffer_percent_3">The intermediate space between the upper and lower rows</label>
+                              <p> <output id="value_imhotep_middle_buffer_percent_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_middle_buffer_percent_3")
+                              const input = document.querySelector("#imhotep_middle_buffer_percent_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div style="display:none;"    >
+                                 <input type="range" id="imhotep_row_buffer_3" name="imhotep_row_buffer_3" min="0" max="40" value="{{ imhotep_row_buffer_3 }}">
+                           <label style="font-size: small" for="imhotep_row_buffer_3">imhotep_row_buffer: </label>
+                              <p> <output  id="value_imhotep_row_buffer_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_row_buffer_3")
+                              const input = document.querySelector("#imhotep_row_buffer_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_downward_length_3" name="imhotep_downward_length_3" min="0" max="15" value="{{ imhotep_downward_length_3 }}">
+                           <label style="font-size: small" for="imhotep_downward_length_3">imhotep_downward_length: </label>
+                              <p> <output  id="value_imhotep_downward_length_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_length_3")
+                              const input = document.querySelector("#imhotep_downward_length_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_downward_no_3" name="imhotep_downward_no_3" min="0" max="50" value="{{ imhotep_downward_no_3 }}">
+                           <label style="font-size: small" for="imhotep_downward_no_3">imhotep_downward_no: </label>
+                              <p> <output id="value_imhotep_downward_no_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_no_3")
+                              const input = document.querySelector("#imhotep_downward_no_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div>
+                                 <input type="range" id="imhotep_downward_cols_3" name="imhotep_downward_cols_3" min="0" max="50" value="{{ imhotep_downward_cols_3 }}">
+                              _
+                           <label style="font-size: small" for="imhotep_downward_cols_3">imhotep_downward_cols: </label>
+                              <p> <output id="value_imhotep_downward_cols_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_cols_3")
+                              const input = document.querySelector("#imhotep_downward_cols_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+
+
+                           <div name="color1" style="display:none;">
+                                 <label for="row_color">Name:</label>
+    <input type="text"           id="row_color_3" name="row_color_3" value="{{ imhotep_row_color_3 }}">
+                          </div>
+
+                           <div style="display:none;" >
+                                 <input type="range" id="imhotep_row_pensize_3" name="imhotep_row_pensize_3" min="0" max="15" value="{{ imhotep_row_pensize_3 }}">
+                           <label style="font-size: small" for="imhotep_row_pensize_3">Row pensize:  </label>
+                              <p> <output id="value_imhotep_row_pensize_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_row_pensize_3")
+                              const input = document.querySelector("#imhotep_row_pensize_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                           <div style="display:none;">
+                                 <input type="range" id="imhotep_downward_pensize_3" name="imhotep_downward_pensize_3" min="0" max="15" value="{{ imhotep_downward_pensize_3 }}">
+                           <label style="font-size: small" for="imhotep_downward_pensize_3">imhotep_downward_pensize: </label>
+                              <p> <output  id="value_imhotep_downward_pensize_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_downward_cols_3")
+                              const input = document.querySelector("#imhotep_downward_cols_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+                          <div name="color2" style="display:none;">
+                               <label for="downward_color">Name:</label>
+    <input type="text"           id="downward_color_3" name="downward_color_3" value="{{ imhotep_downward_color_3 }}">
+                          </div>
+
+                          <div style="display:none;">
+                                 <input type="range" id="imhotep_bounding_pensize_3" name="imhotep_bounding_pensize_3" min="0" max="15" value="{{ imhotep_bounding_pensize_3 }}">
+                           <label style="font-size: small" for="imhotep_bounding_pensize_3">imhotep_bounding_pensize: </label>
+                              <p> <output  id="value_imhotep_bounding_pensize_3"></output></p>
+
+                              <script type='text/javascript'>
+                              const value = document.querySelector("#value_imhotep_bounding_pensize_3")
+                              const input = document.querySelector("#imhotep_bounding_pensize_3")
+                              value.textContent = input.value
+                                input.addEventListener("input", (event) => {
+                                     value.textContent = event.target.value
+                                })
+
+                          </script>
+
+                          </div>
+
+                          <div name="color3" style="display:none;">
+                               <label for="bounding_color_2 ">Name:</label>
+        <input type="text"           id="bounding_color_3 " name="bounding_color_3 " value="{{ imhotep_bounding_color_3 }}">
+                          </div>
+
+                   <button id = "but_search_3" type="submit" class="btn">Regenerate</button>
+                  </form>
+                  </div>
+
+
+                     <script>
+function showMe3 (box) {
+
+    var chboxs = document.getElementsByName("c3");
+    var vis = "none";
+    for(var i=0;i<chboxs.length;i++) {
+        if(chboxs[i].checked){
+         vis = "block";
+            break;
+        }
+    }
+    document.getElementById(box).style.display = vis;
+
+
+}
+</script>
+              </div>
+
+      </html>
