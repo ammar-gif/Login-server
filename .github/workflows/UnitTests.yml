@@ -29,6 +29,10 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
+      env:
+        DISTRIBUTION: 'repo'
 
     - name: Run tests
       run: mvn test
+      env:
+        DISTRIBUTION: 'repo'
