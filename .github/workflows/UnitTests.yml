@@ -22,17 +22,8 @@ jobs:
       with:
         java-version: '11'
 
-    - name: Use Node.js 16
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-
     - name: Build with Maven
       run: mvn clean install
-      env:
-        DISTRIBUTION: 'repo'
 
     - name: Run tests
       run: mvn test
-      env:
-        DISTRIBUTION: 'repo'
