@@ -23,10 +23,8 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: Build with Maven
-      run: |
-         cd Login_server
-         mvn clean install
 
     - name: Run tests
-      run: mvn test
+      run: |
+        cd Login_server
+        mvn test
