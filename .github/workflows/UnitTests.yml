@@ -24,6 +24,7 @@ jobs:
         distribution: 'adopt'
 
     - name: Build with Maven
+           cd Login-Server
       run: mvn clean install
 
     - name: Run tests
