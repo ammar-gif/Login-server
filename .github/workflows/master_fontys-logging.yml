@@ -31,7 +31,6 @@ jobs:
         with:
           name: java-app
           path: '${{ github.workspace }}/Login_server/target/*.jar'
-
   deploy:
     runs-on: windows-latest
     needs: build
@@ -53,3 +52,27 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D5C3D8DDB7A34D489D2DDFC961611518 }}
           package: '*.jar'
+          
+  jmeter-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Java version
+        uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: java-app
+
+      - name: Set up JMeter
+        run: |
+          wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.1.tgz
+          tar -xf apache-jmeter-5.4.1.tgz
+          export PATH=$PATH:$PWD/apache-jmeter-5.4.1/bin
+
+      - name: Run JMeter tests
+        run: |
+          jmeter -n -t /path/to/your/testplan.jmx -l /path/to/results.jtl
