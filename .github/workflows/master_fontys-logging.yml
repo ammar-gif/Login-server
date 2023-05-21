@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy JAR app to Azure Web App - Fontys-Logging
 
 on:
@@ -21,16 +18,17 @@ jobs:
         with:
           java-version: '11'
 
+      - name: Change directory to Login_server
+        run: cd Login_server
+
       - name: Build with Maven
-        run: |
-         cd Login_server
-         mvn clean install
+        run: mvn clean install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: '${{ github.workspace }}/Login_server/target/*.jar'
 
   deploy:
     runs-on: windows-latest
