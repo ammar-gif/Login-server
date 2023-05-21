@@ -15,7 +15,7 @@
     <description>Users-server</description>
     <properties>
         <java.version>11</java.version>
-        <sonar.organization>semester-6-indvidueel</sonar.organization>
+        <sonar.organization>ammar-gif</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
   
