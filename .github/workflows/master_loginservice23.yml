@@ -23,7 +23,7 @@ jobs:
 
       - name: Build with Maven
         run: |
-         cd Login-server
+         cd Login_server
          mvn clean install
 
       - name: Upload artifact for deployment job
