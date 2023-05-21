@@ -52,22 +52,23 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D5C3D8DDB7A34D489D2DDFC961611518 }}
           package: '*.jar'
-          
+        
   jmeter-test:
     runs-on: ubuntu-latest
     name: JMeter Test Execution
     steps:      
-      - name: Checkout
-        uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
         
-      - name: Run JMeter Tests
-        uses: ./
-        with:
-          test-plan-path: ./TestPlans/Login-preformace.jmx
-          args: ""
-          
-      - name: Upload Results
-        uses: actions/upload-artifact@v2
-        with:
-          name: jmeter-results
-          path: result.jtl
+    - name: Run JMeter Tests
+      uses: ./
+      with:
+        test-plan-path: ./TestPlans/Login-preformace.jmx
+        args: ""
+
+    - name: Upload JMeter Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: jmeter-results
+        path: result.jtl
+        if-no-files-found: warn
