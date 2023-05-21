@@ -63,7 +63,7 @@ jobs:
     - name: Run JMeter Tests
       uses: ./
       with:
-        test-plan-path: .TestPlans/Login-preformance.jmx
+        test-plan-path: TestPlans/Login-preformance.jmx
         args: ""
 
     - name: Upload JMeter Results
