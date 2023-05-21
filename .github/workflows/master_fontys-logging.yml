@@ -55,25 +55,19 @@ jobs:
           
   jmeter-test:
     runs-on: ubuntu-latest
-
-    steps:
-      - name: Set up Java version
-        uses: actions/setup-java@v1
+    name: JMeter Test Execution
+    steps:      
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Run JMeter Tests
+        uses: ./
         with:
-          java-version: '11'
-
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v2
+          test-plan-path: ./TestPlans/Login-preformace.jmx
+          args: ""
+          
+      - name: Upload Results
+        uses: actions/upload-artifact@v2
         with:
-          name: java-app
-          working-directory: Login_server
-
-      - name: Set up JMeter
-        run: |
-          wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.1.tgz
-          tar -xf apache-jmeter-5.4.1.tgz
-          export PATH=$PATH:$PWD/apache-jmeter-5.4.1/bin
-
-      - name: Run JMeter tests
-        run: |
-          jmeter -n -t /path/to/your/testplan.jmx -l /path/to/results.jtl
+          name: jmeter-results
+          path: result.jtl
